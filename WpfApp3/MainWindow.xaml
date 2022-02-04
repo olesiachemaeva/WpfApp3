@@ -1,0 +1,63 @@
+﻿<Window x:Class="WpfApp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition ></RowDefinition>
+
+
+
+        </Grid.RowDefinitions>
+        <ToolBarTray Grid.Row="0">
+            <ToolBar Margin="5" Padding="5">
+                <ComboBox Margin="5" Padding="5" SelectedIndex="0" Width="200" SelectionChanged="ComboBox_SelectionChanged_1">
+                    <TextBlock Text="Arial"></TextBlock>
+                    <TextBlock Text="Times New Roman"></TextBlock>
+                    <TextBlock Text="Verdana"></TextBlock>
+                </ComboBox>
+                <ComboBox Margin="5" Padding="5" SelectedIndex="2" Width="50" SelectionChanged="ComboBox_SelectionChanged_1">
+                    <TextBlock Text="12"></TextBlock>
+                    <TextBlock Text="14"></TextBlock>
+                    <TextBlock Text="16"></TextBlock>
+                </ComboBox>
+            </ToolBar>
+            <ToolBar Margin="5" Padding="5">
+                <Button BorderBrush="#FF635252" Margin="2" Padding="2" Click="Button_Click">
+                    <Image Source="Image/icons8-жирный-80.png" Height="54" Width="54" ></Image>
+
+                </Button>
+                <Separator></Separator>
+                <Button BorderBrush="#FF635252" Margin="2" Padding="2" Click="Button_Click_1">
+                    <Image Source="Image/italic-text.png" Height="54" Width="54" ></Image>
+
+                </Button>
+                <Separator></Separator>
+                <Button BorderBrush="#FF635252" Margin="2" Padding="2" Click="Button_Click_2"   >
+                    <Image Source="Image/icons8-подчеркивание-100.png" Width="54" Height="54" ></Image>
+
+                </Button>
+                <Separator></Separator>
+
+            </ToolBar>
+            <ToolBar Margin="5" Padding="5">
+                <StackPanel VerticalAlignment="Center">
+                    <RadioButton Content="Черный" IsChecked="True" Checked="RadioButton_Checked"></RadioButton>
+                    <RadioButton Content="Красный" Click="RadioButton_Click" ></RadioButton>
+                </StackPanel>
+
+
+            </ToolBar>
+
+        </ToolBarTray>
+        <TextBox x:Name="textBox"
+            Grid.Row="1" Margin="5" Padding="5" FontSize="16" FontFamily="Arial"
+                 TextWrapping="Wrap"/>
+
+    </Grid>
+</Window>
