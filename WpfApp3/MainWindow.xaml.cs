@@ -122,6 +122,34 @@ namespace WpfApp3
         {
             Application.Current.Shutdown();
         }
+
+        private void ExitExecuted(object sender, ExecutedRoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void OpenExecuted(object sender, ExecutedRoutedEventArgs e)
+        {
+            MessageBox.Show("Документ открыт");
+
+        }
+
+        private void SaveExecuted(object sender, ExecutedRoutedEventArgs e)
+        {
+            MessageBox.Show("Документ сщхранен");
+        }
+
+        private void ExitCanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            if(textBox !=null && textBox.Text.Length==0)
+            {
+                e.CanExecute = true;
+            }
+            else
+            {
+                e.CanExecute = false;
+            }
+        }
     }
     
 }

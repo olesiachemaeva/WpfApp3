@@ -6,6 +6,11 @@
         xmlns:local="clr-namespace:WpfApp3"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.CommandBindings>
+        <CommandBinding Command="local:MyCommands.Exit"  Executed="ExitExecuted" CanExecute="ExitCanExecute"/>
+        <CommandBinding Command="Open" Executed="OpenExecuted"/>
+        <CommandBinding Command="Save" Executed="SaveExecuted"/>
+    </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -13,11 +18,19 @@
             <RowDefinition ></RowDefinition>
         </Grid.RowDefinitions>
         <Menu  Grid.Row="0" Margin="5" Padding="5">
-            <MenuItem Header="_File" Click="MenuItem_Click_1">
-                <MenuItem Header="_Open" Click="MenuItem_Click"></MenuItem>
-                <MenuItem Header="_Save"/>
+            <MenuItem Header="Фаил" >
+                <MenuItem Header="Открыть" Command="ApplicationCommands.Open"></MenuItem>
+                <MenuItem Header="Сохранить" Command="Save"/>
                 <Separator/>
-                <MenuItem Header="_Close" Click="MenuItem_Click_2"/>
+                <MenuItem   Command="local:MyCommands.Exit"/>
+                <!--<MenuItem.CommandBindings>
+                    <CommandBinding Command="local:MyCommands.Exit"  Executed="ExitExecuted"/>
+                </MenuItem.CommandBindings>-->
+                
+            </MenuItem>
+            <MenuItem Header="Правка" >
+                <MenuItem Header="Коировать" Command="Copy" CommandTarget="{Binding ElementName=textBox}"></MenuItem>
+                <MenuItem Header="Вставить" Command="Paste" CommandTarget="{Binding ElementName=textBox}/>
             </MenuItem>
         </Menu>
         <ToolBarTray Grid.Row="1">
