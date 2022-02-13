@@ -36,7 +36,7 @@
         <ToolBarTray Grid.Row="1">
             <ToolBar Margin="5" Padding="5">
                 <ComboBox Margin="5" Padding="5" 
-                          SelectedIndex="0" Width="200" 
+                          SelectedIndex="0" Width="170" 
                           SelectionChanged="ComboBox_SelectionChanged"
                           ItemsSource="{StaticResource fonts}"/>
 
@@ -71,8 +71,10 @@
                     <RadioButton Content="Черный" IsChecked="True" Checked="RadioButton_Checked"></RadioButton>
                     <RadioButton Content="Красный" Click="RadioButton_Click" ></RadioButton>
                 </StackPanel>
-
-
+                <ComboBox Name="themes" Width="80" SelectedIndex="0" Margin="5" SelectionChanged="themes_SelectionChanged">
+                    <TextBlock Text="Светлая"></TextBlock>
+                    <TextBlock Text="Темная"></TextBlock>
+                </ComboBox>
             </ToolBar>
 
         </ToolBarTray>

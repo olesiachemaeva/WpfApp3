@@ -151,6 +151,14 @@ namespace WpfApp3
                 e.CanExecute = false;
             }
         }
+
+        private void themes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Application.Current.Resources.MergedDictionaries.Clear();
+            Uri theme = new Uri(themes.SelectedIndex == 0 ? "Light.xaml" : "Dark.xaml", UriKind.Relative);
+            ResourceDictionary themeDict = Application.LoadComponent(theme) as ResourceDictionary;
+            Application.Current.Resources.MergedDictionaries.Add(themeDict);
+        }
     }
     
 }
